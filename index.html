@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Tree.js biblioteka</title>
+  </head>
+  <body>
+    <div id="app"></div>
+     <main>
+
+      <header>
+        <h1>THREE.JS</h1>
+        <p>JavaScript biblioteka za 3D modelovanje</p>
+      </header>
+
+
+      <blockquote>
+        <p>Spajanje WebGL i JavaScripta</p>
+      </blockquote>
+
+     
+
+      <section>
+        <h2>📜 Uvod</h2>
+        <p>
+          Ova biblioteka omogućava razvoj interaktivnih 3D grafika direktno u web stranicama, bez potrebe za dodatnim pluginima ili eksternim programima. Three.js pruža bogat set funkcija i alata za kreiranje raznovrsnih 3D scena, modela i animacija.
+        </p>
+        
+        <p>
+          Three.js je popularan među web developerima koji žele dodati 3D vizualizaciju ili interaktivne igrice u svoje web stranice. Budući da se oslanja na WebGL, radi na većini modernih web pregledača, uključujući Google Chrome, Mozilla Firefox, Safari i druge.
+        </p>
+        
+      </section>
+      <section class="light">
+        <h2>⚙ Tehnologije</h2>
+        
+        <p>
+          Sama postavka projekta je veoma laka; najlakši način bi bio upotrebom <b>npm</b>-a i/ili neke druge vrste package-control menadžmenta kao što je <b>Vite</b>. Izabrani text editor je <b>Visual Studio Code</b>, a pored <b>HTML-a</b> i <b>CSS-a</b> nam neće više ništa biti potrebno.        </p>
+                  
+        <p>
+          Kako se biblioteka zasniva na <b>Vanilla JavaScriptu</b>, tako se aplikacija može napraviti i u drugim bibliotekama kao što je <b>React.js</b> ili u nekom drugom frameworku poput <b>Vue, Svelte, Angular</b>...
+          </p>
+
+          <h2>Priprema projekta</h2>
+          <p>
+            Prvobitno treba instalirati biblioteku, preko <b>npm-a</b> i komande <i style="color: yellow;">npm install --save three</i>, ili upotrebom <b>CDN linkova</b>. Preciznije uputstvo možete pogledati <a href="https://threejs.org/docs/#manual/en/introduction/Installation"><b>OVDE</b></a> 
+          </p>
+          
+      </section>
+     
+
+      <blockquote style="text-align: center;">
+        <p>Podržana implementacija 3D modela iz Blendera</p>
+      </blockquote>
+
+      <section class="left">
+        <h2>📜 Osnovne postavke i funkcije</h2>
+
+       
+        <h3>Scena</h3>
+        <p>
+          Da bismo prikazali bilo šta, potrebne su nam tri osnovne komponente: <b>Scena, Kamera i Renderer</b>, kako bismo <i>renderovali</i> scenu, gledanu kroz kameru.
+        </p>
+        <img src="slike/scena.PNG" alt="import slika">
+        <p>
+          Ukratko, <i style="color: yellow;">PerspectiveCamera</i> je jedna od vrsta kamera u three.js gde se kamera ponaša kao ljudsko oko. Parametri konstruktora su <b>FOV/Ugao gledanja, aspect ratio, near i far</b>. Ugao gledanja se predstavlja stepenima, razmeru je najlakše namestiti prema korisničkom ekranu, a near i far određuju renderovanje bližih u odnosu na dalje objekte, ali ovo za sada nije toliko bitno.
+        </p>
+
+          <p>Sledeća stavka je <b>Renderer</b>. Da bismo ga kreirali, takođe moramo postaviti visinu i širinu u kojoj ćemo renderovati aplikaciju. Poslednja linija koda nam povezuje render sa HTML dokumentom. HTML koristi <i><b>canvas</b></i> za prikaz.</p>
+        <h3>Osnovni elementi</h3>
+        <img src="slike/cube.PNG" alt="kockica">
+        <p>Svaki element se pravi spajanjem <b>geometrije i materijala</b>. Svaka geometrija ima zasebne konstruktore. Za materijale takođe postoji puno opcija, uz koje se može dodati boja, custom tekstura ili reljef. Na kraju se oni spajaju upotrebom <i style="color: yellow;">THREE.Mesh()</i></p>
+        <p>Svaki element se mora dodati na scenu, korišćenjem funkcije <i style="color: yellow;">Scene.add()</i></p>
+     
+        <h3>Prikaz scene</h3>
+        <img src="slike/animate.PNG" alt="animate">  
+        <p>Prikaz scene se vrši kreiranjem funkcije, sličnoj <i>setInterval()</i>, koja refrešuje ekran 60 puta u sekundi, korišćenjem funkcije <i style="color: yellow;">requestAnimationFrame()</i>,koja će inače paziti na upotrebu <b>RAM memorije i uštede energije</b>. U ovoj funkciji se kreiraju pomeranja i rotacije.</p>
+      </section>
+
+
+      <blockquote>
+        <p>Mihailo Terzić 76/2022</p>
+      </blockquote>
+
+
+    </main> 
+   
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
